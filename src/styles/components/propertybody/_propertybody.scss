@@ -1,0 +1,85 @@
+.propertybody{
+    max-width: 695px;
+    width: 695px;
+    height: calc(100vh - 75px);
+    margin-left: 15px;
+    margin-right: 0;
+}
+
+.propertybody-topheader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p{
+        font-size: 0.875rem;
+        color: #999;
+    }
+}
+
+.propertybody-filter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    p{
+        display: inline-block;
+    }
+}
+
+.propertybody-filterby-container{
+    width: 224px;
+    height: 37px;
+    .propertybody-filterby{
+        background: white;
+        display: inline-flex;
+        justify-content: space-between;
+        margin-right: 10px;
+        width: 60%;
+        height: 100%;
+        cursor: pointer;
+        @extend %input;
+        
+        p{
+            margin-right: 50x;
+        }
+
+    }
+}
+
+.propertybody-filterby-container-two{
+    width: 240px;
+    height: 37px;
+    display: flex;
+    justify-content: space-between;
+    
+    .propertybody-filterby-container-two-first, .propertybody-filterby-container-two-second{
+        @extend %input;
+        background: white;
+        margin-right: 5px;
+        display: flex;
+        padding: 5px;
+        align-items: center;
+        justify-content: center;
+        div{
+            background-size: contain;
+            height: 35px;
+            width:30px;
+            background-repeat: no-repeat;
+        }
+    }   
+    .propertybody-filterby-container-two-first div{
+        background-image: url("../../images/filterby-one.png");
+    }
+
+    .propertybody-filterby-container-two-second div{
+        background-image: url("../../images/filterby-two.png");
+        
+        p{
+            font-size: 0.875rem;
+        }
+        
+    }
+
+}

@@ -1,0 +1,49 @@
+.publishheader{
+    height: 3rem;
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.publishheader-first{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    div{
+        background-image: url("../../images/yad2Logo.png");
+        height: 100px;
+        width: 100px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    h2{
+        font-size: 18px;
+        color: #363636;
+        font-weight: 500;
+    }
+}
+
+.publisher-header-second{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 200px;
+
+    div{
+        cursor: pointer;
+    }
+
+    .publisher-header-second-connect{
+        p{
+            display: inline-block;
+            margin-right: 5px;
+            color: $myOrange;
+            font-weight: 500;
+        }
+    }
+
+}

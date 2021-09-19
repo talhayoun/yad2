@@ -1,0 +1,10 @@
+.body{
+    min-height: calc(100vh - 75px);
+    margin-top: 3.5rem;
+    background: $myLightGrey;
+}
+
+.body-container{
+    width: 960px;
+    margin: 0 auto;
+}

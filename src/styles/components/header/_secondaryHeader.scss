@@ -1,0 +1,71 @@
+.secondaryheader{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    background: white;
+    border-top: 1px solid #eee;
+    box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 1 /10%);
+
+}
+
+.secondaryheader-div-one{
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-right: 50px;
+    font-weight: 500;
+    color: $myBlack;
+}
+
+.secondaryheader-div-two{
+    width: 40%;
+    display: flex;
+    justify-content: space-evenly;
+
+
+
+    div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p{
+         margin: 0;
+        }
+    }
+
+
+    .secondary-div-two-hammer{
+
+        div{
+            background-image: url("../../images/hammer.png");
+
+        }
+    }
+
+    .secondary-div-two-smalldoron{
+        div{
+            background-image: url("../../images/smalldoron.png");
+        }
+    }
+
+    .secondary-div-two-yad1 div{
+        background-image: url("../../images/yad1_logo.svg");
+    }
+
+    .secondary-div-two-yadata div{
+        background-image: url("../../images/yadata_logo_black.svg");
+        margin-top: 20px;
+    }
+}
+
+.secondaryheader-img-style{
+    background-repeat: no-repeat;
+    background-size: contain;;
+    height: 30px;
+    width: 50px;
+    margin-top: 10px;
+    margin-left: 10px;
+}

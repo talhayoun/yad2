@@ -1,0 +1,91 @@
+.topad{
+    height: 160px;
+    width: 960px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    grid-template-rows: 1fr 2fr;
+
+    .topad-upper-div{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        display: flex;
+        justify-content: space-between;
+
+        .topad-upper-div-one{
+            padding: 8px;
+            p{
+                margin: 0;
+                display: inline-block;
+                margin-left: 10px;
+                font-weight: 500;
+            }
+
+            .topad-upper-div-one-secondp{
+                color: #999;
+            }
+        }
+
+    }
+}
+
+
+.topad-upper-div-two{
+
+    button{
+        width: 100px;
+        height: 40px;
+        border-radius: 3px;
+        color: #fff;
+        margin: 5px 0;
+        background-color: #002f75;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        text-align: center;
+
+        &:hover{
+            background-color: #002151;
+        }
+
+        p{
+            font-weight: 700;
+            padding-right: 10px;
+            font-size: .875rem;
+            margin: 0;
+        }
+
+        div{
+            background-image: url("../../images/accessability.png");
+            background-size: contain;
+            height: 30px;
+            width: 30px;
+        }
+    }
+}
+
+
+.topad-down-div{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    display: flex;
+    width: 960px;
+
+    .topad-down-div-one{
+        background-image: url("../../images/big-ad.jpg");
+        background-repeat: no-repeat;
+        width: 100%;
+    }
+
+    .topad-down-div-two{
+        background-image: url("../../images/small-ad.jpg");
+        width: 31%;
+        background-repeat: no-repeat;
+    }
+
+}

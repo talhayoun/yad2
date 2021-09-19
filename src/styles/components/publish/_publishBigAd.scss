@@ -1,0 +1,45 @@
+.publishbigad-div{
+        height: 225px;
+        width: 323px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 50% 15% 35%;
+        background: white;
+
+        svg{
+            margin: 0 auto;
+        }
+
+        p{
+            margin-top: 20px;
+        }
+        button{
+            display: none;
+        }
+}
+
+
+.publishbigad-div:hover{
+    svg{
+        filter: invert(53%) sepia(40%) saturate(5536%) hue-rotate(1deg) brightness(104%) contrast(104%);
+    }
+    p{
+        display: none;
+    }
+    button{
+        display: block;
+        height: 2.1875rem;
+        font-weight: 600;
+        width: 6.875rem;
+        border: none;
+        border-radius: .125rem;
+        margin: 9px auto 0 auto;
+        color: #fff;
+        font-size: 1rem;
+        background: $myOrange;
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+}

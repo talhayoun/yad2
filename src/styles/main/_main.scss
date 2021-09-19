@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box;
+    font-family: Rubik,sans-serif;
+}
+html, body{
+    margin: 0;
+    direction: rtl;
+
+    p{
+        margin: 0;
+    }
+}
+
+%input{
+    height: 40px;
+    border-radius: 1px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+    font-size: 0.875rem;
+    outline: none;
+}

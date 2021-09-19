@@ -1,0 +1,71 @@
+.secondaryad{
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    
+    div{
+        margin: 15px 3px;
+        min-height: 62px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 1fr;
+        grid-row-gap: 5px;
+        cursor: pointer;
+        div{
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            min-height: 40px;
+            background: white;
+        }
+
+        p{
+            background: white;
+            font-size: 14px;
+
+            &:hover{
+                color: $myOrange;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+.secondaryad-pics{
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    max-width: 80%;
+
+
+}
+.Secondaryad-one{
+    background-image: url("../../images/transfers-ad.jpg") !important;
+}
+
+.Secondaryad-two{
+    background-image: url("../../images/secondaryad-2.png") !important;
+}
+
+.Secondaryad-three{
+    background-image: url("../../images/secondaryad-3.jpg") !important;
+}
+
+.Secondaryad-four{
+    background-image: url("../../images/secondaryad-4.jpg") !important;
+}
+
+.Secondaryad-five{
+    background-image: url("../../images/secondaryad-5.jpg") !important;
+}
+
+.Secondaryad-six{
+    background-image: url("../../images/secondaryad-6.jpg") !important;
+}
+
+.Secondaryad-seven{
+    background-image: url("../../images/secondaryad-7.jpg") !important;
+}
+.Secondaryad-eight{
+    background-image: url("../../images/secondaryad-8.jpg") !important;
+}

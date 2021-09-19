@@ -1,0 +1,172 @@
+.filtercontent{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 5fr 4fr 3fr 5fr 4fr 3fr ;
+    grid-template-rows: 1fr;
+    grid-column-gap: 8px;
+
+    .filtercontent-one{
+        display: grid;
+        grid-template-rows: 1fr 2fr ;
+        grid-template-columns: 1fr;
+        grid-column-start: 1;
+        grid-column-end: 2;
+
+        p{
+            margin: 0;
+            font-size: 0.875rem;
+        }
+
+        input{
+            @extend %input;
+
+        }
+    }
+    
+}
+
+.filtercontent-two{
+    display: grid;
+    grid-template-rows: 1fr 2fr ;
+    grid-template-columns: 1fr;
+    grid-column-start: 2;
+    grid-column-end: 3;
+
+    p{
+        font-size: 0.875rem
+    }
+    
+    div{
+        @extend %input;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+
+        p{
+            color: #9999;
+            font-weight: 500;
+            display: inline-block;
+        }
+    }
+}
+
+.filtercontent-three{
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    grid-template-columns: 1fr;
+    grid-column-start: 3;
+    grid-column-end: 4;
+
+    p{
+        font-size: 0.875rem
+    }
+    div{
+        @extend %input;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+
+        p{
+            font-weight: 500;
+            color: #9999;
+        }
+    }
+}
+
+.filtercontent-four{
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    grid-template-columns: 1fr;
+    grid-column-start: 4;
+    grid-column-end: 5;
+
+    div input{
+        @extend %input;
+        border: 1px solid #9999;
+        display: inline-block;
+        width: 50%;
+    }
+}
+
+.filtercontent-five{
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    grid-template-columns: 1fr;
+    grid-column-start: 5;
+    grid-column-end: 6;
+
+    div{
+        grid-row-start: 2;
+        grid-row-end: 3;
+        background-color: #eee;
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 40px;
+        padding: 10px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        cursor: pointer;
+
+        &:hover{
+            background-color: #9999;
+        }
+        p{
+            display: inline-block;
+
+        }
+
+        div{
+            background-color: unset;
+            height: 5px;
+            width: 5px;
+            border-radius: 50%;
+            border: 1px solid black;
+        }
+    }
+}
+
+.filtercontent-six{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+    grid-column-start: 6;
+    grid-column-end: 7;
+
+    div{
+        grid-row-start: 2;
+        grid-row-end: 3;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: $myOrange;
+        height: 40px;
+        padding: 10px;
+        font-size: 0.875rem;
+        font-weight: 700;
+        cursor: pointer;
+
+        &:hover{
+            background-color: #d86000;
+
+            div{
+                background-color: #d86000;
+            }
+        }
+
+        div{
+            background-image: url("../../images/glass-icon.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 20px;
+            width: 20px;
+        }
+
+        p{
+            display: inline-block;
+            color: white;
+        }
+    }
+}

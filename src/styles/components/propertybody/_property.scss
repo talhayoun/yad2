@@ -1,0 +1,150 @@
+.property{
+    width: 100%;
+    height: 87px;
+    display: grid;
+    grid-template-columns: 346px 185px 162px;
+    border: 1px solid rgba(0,0,0, .1);
+    background: #fdf9c5;
+
+    &:hover{
+        box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 1 / 10);
+
+        .property-one-first:first-child{
+            transform: scale(1.03) translateZ(0)
+        }
+        .property-three-update p{
+            visibility: hidden;
+        }
+        .property-three-update p::after{
+            content: "לחצו לפרטים";
+            font-weight: 600;
+            color: $myOrange;
+            visibility: visible;
+        }
+
+        .property-three-newtab p::after{
+            content: "פתיחה בטאב חדש"
+        }
+        .property-one-heart-seconddiv{
+             background-image: url("../../images/adphoto-numbers.png");   
+             background-repeat: no-repeat;
+             height: 39px;
+             width: 80px;
+             position: absolute;
+             top: 10px;
+             right: 15px;
+        }
+    }
+}
+
+.property-one{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    // background: yellow;
+    border-left: 1px solid rgba(0,0,0, .1);
+
+    .property-one-first{
+        width: 110px;
+        height: 66px;
+        margin: 10px;
+        display: inline-block;
+        vertical-align: top;
+
+        &:first-child{
+            background-image: url("../../images/example.jpeg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            border-radius: 3px;
+
+        }
+
+        .property-one-heart{
+            background: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50px;
+            :first-child{
+                background-image: url("../../images/heart.png");
+                background-size: contain;
+                height: 50px;
+                width: 50px;
+                background-position: 25px -8px;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+
+    .property-one-second{
+        display: inline-block;
+        width: 215px;
+        padding: 26px 10px;
+        height: 100%;
+
+        .property-one-second-secondp{
+            font-size: 14px;
+        }
+    }
+}
+
+
+.property-two{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    max-width: 186px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    border-left: 1px solid rgba(0,0,0, .1);
+    height: 85px;
+    width: 100%;
+}
+
+
+
+.property-three{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    padding: 0 5px 0 0;
+    justify-content: flex-start;
+    text-align: left;
+    height: 85px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 25% 30% 25%;
+    
+    .property-three-newtab{
+        padding: 3px 0 4px 7px;
+        div{
+            background-image: url("../../images/open-in-new-tab-icon-12.jpg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 13px;
+            width: 20px;
+            float: left;
+        }
+        p{
+            font-size: 13px;
+            color: #999;
+            display: inline-block;
+        }
+    }
+
+    .property-three-price{
+        margin-top: 5px;
+        font-size: 16px;
+        padding: 0 0 0 15px;
+    }
+
+    .property-three-update{
+        padding: 0 0 0 15px;
+        height: 13px;
+        font-size: 13px;
+        color: rgba(0,0, 0, .5);
+        p::before{
+            content: "עודכן היום"
+        }
+    }
+}
+
