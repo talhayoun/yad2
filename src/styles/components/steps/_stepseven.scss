@@ -1,0 +1,238 @@
+.stepseven-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 165px;
+    padding: 8px;
+    
+    h6{
+        margin: 0;
+        font-size: 24px;
+        font-weight: 300;
+        color: #000;
+    }
+}
+
+.stepseven-top{
+    margin: 1% 5%;
+    padding-bottom: 80px;
+    border-bottom: 1px solid black;
+    width: 90%;
+    p{
+        font-size: 16px;
+        font-weight: 300;
+        color: #000;
+        margin-bottom: 0;
+        margin-top: 20px;
+    }
+    .stepseven-top-same-amount{
+        background-color: #f9f7f7;
+        border-radius: 20px;
+        height: 30px;
+        width: 42px;
+        color: #333;
+        text-align: center;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 500;
+        border: 1px solid hsla(0, 0%, 66.7%, .3);
+        padding: 0 10px;
+    }
+    .stepseven-rocket-image{
+        background-image: url("../../images/stepseven-img.png");
+        width: 71px;
+        height: 53px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        display: inline-block;
+    }
+    .stepseven-top-highlight{
+        background: #fdf9c4;
+        color: #333;
+        font-weight: 700;
+        padding: 2px 3px 2px 2px ;
+        margin: 0 2px 0 5px;
+    }
+}
+
+.stepseven-body{
+    padding: 1% 5%;
+    h6{
+        font-size: 1.1em;
+        margin: 1.4em 0 .8em 0;
+        font-weight: 400;
+        font-family: Rubik;
+    }
+
+    .stepseven-options-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 45px;
+        flex-wrap: wrap;
+
+        .stepseven-option-VIP{
+            height: 430px;
+            width: 238px;
+            box-shadow: 0 2px 10px 0 rgba(43, 43, 43, 1 / 10%);
+            border-radius: 6px;
+            width: 238px;
+            height: 420px;
+            text-align: center;
+            margin-top: 10px;
+            background-color: rgba(253, 249, 197, .61);
+            order:2;
+            .stepseven-option-VIP-top{
+                
+
+                .stepseven-option-VIP-top-recommended{
+                    width: 81px;
+                    border-radius: 4px;
+                    background-color: #fff;
+                    margin: 0 auto;
+                    padding: 4px 0;
+                    border: 1px solid #ff7100;
+                    display: flex;
+                    justify-content: space-evenly;
+                    color: $myOrange;
+                    font-size: 14px;
+                    div{
+                        background-image: url("../../images/crown.png");
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        height: 18px;
+                        width: 20px;
+                    }
+                }
+
+                .stepseven-option-VIP-top-rocket{
+                    background-image: url("../../images/stepseven-img.png");
+                    background-size: contain;
+                    width: 153px;
+                    height: 114px;
+                    background-repeat: no-repeat;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}
+
+.stepseven-option-VIP-pros{
+    margin-top: 30px;
+}
+
+.stepseven-tick-container{
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    margin-top: 15px;
+    div{
+        background-image: url("../../images/tick-icon.png");
+        background-size: contain;
+        height: 10px;
+        width: 10px;
+        background-repeat: no-repeat;
+        margin: 5px;
+    }
+}
+
+.stepseven-options-VIP-button{
+    margin-top: 10px;
+    background-color: $myOrange;
+    color: #fff;
+    border-radius: 4px;
+    padding: 8px 0;
+    cursor: pointer;
+    font-size: 1em;
+    width:206px;
+    border:none;
+    font-weight: 700;
+}
+
+.stepseven-option-basic{
+    text-align: center;
+    height: 348px;
+    width: 238px;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px 0 rgba(43, 43, 43, 1 / 10%);
+    background-color: #f9f9f9;
+    order:1;
+    button{
+        border: 1px solid $myOrange;
+        color: $myOrange;
+        background: #fff;
+        font-size: 1em;
+        padding: 8px 0;
+        border-radius: 4px;
+        width: 206px;
+        cursor: pointer;
+        height: 40px;
+        font-weight: 700;
+        margin-top: 30px;
+    }
+}
+
+.stepseven-option-basic-clouds{
+    background-image: url("../../images/cloud.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 126px;
+    height: 100px;
+}
+
+.stepseven-option-basic-cons{
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    margin-top: 15px;
+    opacity: 0.4;
+    div{
+        height: 10px;
+        width: 10px;
+        margin: 5px;
+        font-size: 14px;
+    }
+}
+
+.stepseven-option-highlighted{
+    text-align: center;
+    height: 348px;
+    width: 238px;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px 0 rgba(43, 43, 43, 1 / 10%);
+    background-color: #fff7f7;
+    order:3;
+    button{
+        border: 1px solid $myOrange;
+        color: $myOrange;
+        background: #fff;
+        font-size: 1em;
+        padding: 8px 0;
+        border-radius: 4px;
+        width: 206px;
+        cursor: pointer;
+        height: 40px;
+        font-weight: 700;
+        margin-top: 10px;
+    }
+}
+
+.stepseven-option-highlighted-rocket{
+    background-image: url("../../images/beforelaunchrocket.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 126px;
+    height: 100px;
+}
+
+.stepseven-checkbox{
+    display: flex;
+    font-size: 14px;
+    margin-bottom: 80px;
+}

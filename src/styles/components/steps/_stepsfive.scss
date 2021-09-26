@@ -1,0 +1,140 @@
+.stepfive-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    height: 70px;
+
+    p{
+        margin-top: 55px;
+        width: 500px;
+        color: #000;
+        font-size: 1.1rem;
+        margin-top: 5px;
+        padding-right: 5%;
+    }
+    .stepfive-header-firstdiv{
+        width: 300px;
+        display: grid;
+        grid-template-columns: 5% 95%;
+        align-items: center;
+        margin-right: 10px;
+        h3{
+            color: #000;
+            font-size: 24px;
+            padding-right: 5.5%;
+            margin-bottom: 0;
+            font-weight: 300;
+            grid-column-start: 2;
+            margin: 0;
+            margin-right: 10px;
+        }
+    }
+    .stepfive-header-seconddiv{
+        margin-top: 20px;
+        height: 52px;
+        width: 413px;;
+        border: 1px solid #c6e1ff;
+        border-radius: 3px;
+        background: #f3f8ff;
+        box-shadow: 0 2px 2px 0 rgba(0,0,0, 1/8%);
+        padding: 8px;
+        display: grid;
+        grid-template-columns: 10% 90%;
+        grid-template-rows: 1fr 1fr;
+        grid-column-gap: 10px;
+        margin-left: 50px;
+        div{
+            // font-weight: 700;
+            font-size: 14px;
+            color: #363636;
+            letter-spacing: .2px;
+            margin: 0;
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 1;
+            height: fit-content;
+        }
+
+        div:first-child{
+            background-image: url("../../images/light-bulb-on.png");
+            width: 30px;
+            height: 40px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            grid-row-start: 1;
+            grid-row-end: 3;
+            grid-column-start: 1;
+            grid-column-end: 2;
+        }
+    }
+}
+
+.stepfive-form{
+    padding: 1% 5%;
+    .stepfive-top{
+        padding-bottom: 40px;
+        border-bottom: 1px solid #9d9d9d;
+        p{
+            margin: 0;
+            font-size: 15.4px;
+            color:#000;
+            font-weight: 300;
+            line-height: 22px;
+        }
+
+        .stepfive-top-video-image{
+            display: flex;
+            width: 65%;
+            justify-content: space-between;
+        }
+    }
+}
+
+.stepfive-top-video-image-imgContainer{
+    width: 260px;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    position: relative;
+    height: 190px;
+    margin-top: 10px;
+    p:first-child{
+        position: absolute;
+        top: 3px;
+        font-size: 14px;
+    }
+    > div{
+        margin-bottom: 10px;
+        border: none;
+        height: 70%;
+    }
+}
+
+.stepfive-images{
+    h6{
+        font-size: 1.6em ;
+        font-weight: 400;
+        margin: .6em 0 .4em 0;
+    }
+
+    .stepfive-images-container{
+        margin-bottom: 40px;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        // grid-column-gap: 20px;
+        // grid-row-gap: 20px;
+    }
+}
+
+.stepfive-wecheck{
+    div{
+        margin: 0;
+    }
+}

@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-const PublishBigAd = ({onClickButton}) => {
+const PublishBigAd = ({ onClickButton }) => {
 
     return (
         <>

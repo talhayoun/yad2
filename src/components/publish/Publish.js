@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import PublishBody from './PublishBody';
-import PublishCategories from './PublishCategories';
 import PublishHeader from './PublishHeader';
-import PublishingBody from './PublishingBody';
+import PublishingBody from '../publishingSteps/PublishingBody';
 
 const Publish = () => {
 
@@ -15,7 +14,7 @@ const Publish = () => {
     return (
         <div className="publish">
             <PublishHeader />
-            {publishingBody ? <PublishingBody /> : <PublishBody onClickPublishing={onClickPublishing} /> }
+            {publishingBody ? <PublishingBody /> : <PublishBody onClickPublishing={onClickPublishing} />}
         </div>
     );
 };

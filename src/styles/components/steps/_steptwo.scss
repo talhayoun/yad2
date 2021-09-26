@@ -19,6 +19,7 @@
         display: grid;
         grid-template-columns: 20% 80%;
         align-items: center;
+        margin-right: 10px;
         h3{
             color: #000;
             font-size: 24px;
@@ -52,11 +53,25 @@
                 font-weight: 700;
             }
         }
+
+        div{
+            background-image: url("../../images/video-icon.png");
+            width: 50px;
+            height: 40px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-bottom: 10px;
+            margin-left: 10px;
+        }
     }
+}
+.steptwo-paragraph{
+    padding: 10px;
 }
 
 .steptwo-form{
-    select{
+    padding: 10px;
+    select, input{
         cursor: pointer;
         height: 40px;
         border: 1px solid #ccc;
@@ -67,4 +82,271 @@
         width: 263px;
         text-decoration: none;
     }
+    div h6{
+        font-size: 14px;
+        font-weight: 500;
+        margin: 10px;
+    }
+    div input, div select{
+        margin-bottom: 10px;
+        margin-right: 10px;
+    }
+}
+
+.steptwo-city{
+    width: fit-content;
+    position: relative;
+    .steptwo-city-x{
+        height: 10px;
+        width: 10px;
+        position: absolute;
+        left: 5px;
+        bottom: 25px;
+        font-size: 13px;
+    }
+    input{
+        margin-bottom: 0px !important;
+    }
+}
+
+.steptwo-housenumber{
+    width: 130px !important;
+}
+
+.steptwo-floor-container{
+    display: flex;
+    .steptwo-floor-num{
+        input{
+            width: 176px;
+            margin-right: 10px;
+        }
+    }
+    .steptwo-floor-check{
+        display: flex;
+        align-items: center;
+        margin-top: 30px;
+        input{
+            width: 18px;
+            height: 18px;
+        }
+        label{
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.steptwo-subscribe-checkbox{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    
+    input{
+        width: 18px;
+        height: 18px;
+
+    }
+    label{
+        margin-bottom: 5px;
+        margin-right: 5px;
+        font-weight: 500;
+        font-size: 14px;
+        color: #333333;
+    }
+}
+
+.steptwo-wecheck{
+    width: 792px;
+    height: 160px;
+    box-shadow: 0 3px 10px 0 rgba(12, 0, 51, 5 / 10%);
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    max-width: 800px;
+    text-align: right;
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 75% 28%;
+    grid-template-rows: 40% 20% 40%;
+    padding: 20px 20px 0 0;
+
+    .steptwo-wecheck-firstdiv{
+        width: 792px;
+        display: flex;
+        align-items: center;
+
+        .steptwo-wecheck-firstdiv-wechecklogo{
+            background-image: url("../../images/wecheck-logo.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 22px;
+            width: 104px;
+            display: inline-block;
+        }
+        h2{
+            color: #054f9a;
+            font-size: 16px;
+            font-weight: 700;
+            margin: 4px 0 0 9px;
+        }
+        span{
+            color: #054f9a;
+            font-size: 12px;
+        }
+
+        .steptwo-wecheck-firstdiv-isracart, .steptwo-wecheck-firstdiv-yad2logo{
+            background-size: contain;
+            background-repeat: no-repeat;
+            display: inline-block;
+        }
+        .steptwo-wecheck-firstdiv-yad2logo{
+            background-image: url("../../images/yad2Logo.png");
+            height: 20px;
+            width: 33px;
+        }
+        .steptwo-wecheck-firstdiv-isracart{
+            background-image: url("../../images/isracart.png");
+            height: 18px;
+            width: 80px;
+        }
+    }
+
+    .steptwo-wecheck-seconddiv{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+
+        h3{
+            margin: 0;
+            font-weight: 700;
+            font-size: 14px;
+        }
+    }
+
+    .steptwo-wecheck-thirddiv{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        display: flex;
+        margin-top: 10px;
+
+        input{  
+            height: 20px;
+            width: 20px;
+            border: 2px solid rgba(0,0,0, .54);
+            cursor: pointer;
+            border-radius: 2px;
+            background: #fff;
+            outline: none;
+            margin: 0;
+        }
+
+        p{
+            display: inline-block;
+            margin: 0;
+            margin-right: 5px;
+            font-size: 14px;
+        }
+    }
+
+    .steptwo-wecheck-fourthdiv{
+        height: 100%;
+        width: 100%;
+        grid-row-start: 1;
+        grid-row-end: 4;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        div{
+            background-image: url("../../images/videoPlaceHolder_new.gif");
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 100px;
+            width: 180px;
+            margin-left: 30px;
+        }
+    }
+    
+
+}
+
+.steptwo-form-buttons-div{
+    height: 100px !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 792px !important;
+    // padding: 10px 10px 0 0;
+    margin: 0 !important;
+    .steptwo-form-button-first{
+        cursor: pointer;
+        font-size: 14px;
+        border-radius: 17.5px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        color: #363636;
+        text-align: center;
+        height: 35px;
+        width: 90px;
+        &:hover{
+            background: #ff7100;
+            color: #fff;
+        }
+    }
+    .steptwo-form-button-second{
+        font-size: 14px;
+        background-color: #fff;
+        color: #ff7100;
+        border: 1px solid #ff7100;
+        text-align: center;
+        height: 35px;
+        width: 155px;
+        border-radius: 17.5px;
+        font-weight: 600;
+        cursor: pointer;
+
+        &:hover{
+            background: #ff7100;
+            color: #fff;
+        }
+    }
+}
+.steptwo-streets{
+    width: fit-content;
+    input{
+        margin-bottom: 0 !important;
+    }
+}
+
+.step-two-suggestedcity{
+    background: #fff;
+    border: 1px solid #ccc;
+    position: relative;
+    z-index:99;
+    margin-right: 5%;
+}
+
+.step-two-suggested-city:hover{
+    background: #ccc;
+}
+
+.step-two-error-message{
+    color: #ff2a2b;
+    margin-bottom: 1.3em;
+    margin-right: 10px;
+    font-size: 14px;
+}
+.steps-error-input{
+    border-color: #c00 !important;
+}
+
+.steps-disabled-input{
+    color: #ccc !important;
+    cursor: default !important;
+    border: 1px solid #eee !important;
+    background-color: #fff !important;
+    opacity: .4;
+}
+.steps-disabled-header{
+    color: #cccccc;
 }

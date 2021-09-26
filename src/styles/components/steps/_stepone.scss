@@ -8,10 +8,53 @@
     margin-top: 25px;
 }
 
+.step-closed{
+    width: 880px;
+    height: 60px;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    position: relative;
+    box-shadow: 0 2px 4px 0 rgba(12, 0, 51, 1 / 10% );
+    display: flex;
+    align-items: center;
+
+    h2{
+        font-size: 24px;
+        padding: 15px;
+        color:#acacac;
+        font-weight: 300;
+        margin-right: .5%;
+    }
+    > div{
+        position: absolute;
+        left: 3%;
+        top: .9em;
+        color: #999;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        height: 30px;
+        width: 87px;
+        border-radius: 20px;
+        background-color: #eee;
+        border: none;
+        display: flex;
+        align-items: center;
+        div{
+            background-image: url("../../images/edit-icon.png");
+            background-size: contain;
+            height: 40px;
+            width: 35px;
+            background-repeat: no-repeat;
+            
+        }
+    }
+}
+
 .step-num{
     height: 24px;
     width: 24px;
-    position: absolute;
     margin-right: 1.3%;
     margin-top: 1px;
     border-radius: 50px;
@@ -21,7 +64,20 @@
     font-size: 18px;
     font-weight: 500;   
 }
+.step-num-closed{
+    height: 24px;
+    width: 24px;
+    font-size: 18px;
+    font-weight: 500;
+    border: 2px solid #ccc;
+    text-align: center;
+    color: #999;
+    border-radius: 50px;
+    margin-right: 1.3%;
+}
+
 .stepone{
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 20% 80%;
