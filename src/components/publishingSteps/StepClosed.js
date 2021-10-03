@@ -1,14 +1,39 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { PublishContext } from '../context/PublishContext';
 
 const StepClosed = (props) => {
 
+    const { publishData } = useContext(PublishContext);
+
     const [num, setNum] = useState("");
     const [header, setHeader] = useState("");
+    const [midHeader, setMidHeader] = useState("")
 
     useEffect(() => {
         setNum(props.num);
         setHeader(props.header);
-    }, [props])
+        switch (props.num) {
+            case 2:
+                if (publishData.assetType)
+                    setMidHeader(`${publishData.assetType} - ${publishData.city} - ${publishData.street} - קומה ${publishData.floorNumber}`)
+                break;
+            case 3:
+                if (publishData.roomsNumber)
+                    setMidHeader(`${publishData.roomsNumber} חדרים`)
+                break;
+            case 4:
+                if (publishData.paymentAmount)
+                    setMidHeader(`מס' תשלומים ${publishData.paymentAmount} ${publishData.totalSize ? ` - ${publishData.totalSize} מ"ר נטו` : ""} ${publishData.price ? ` - מחיר: ${publishData.price} ₪` : ""}`)
+                break;
+            case 6:
+                if (publishData.username)
+                    setMidHeader(`${publishData.username} - ${publishData.phone}`)
+                break;
+            default:
+                break;
+        }
+    }, [publishData, props])
+
 
     const restartSteps = () => {
         switch (num) {
@@ -42,6 +67,7 @@ const StepClosed = (props) => {
         <div className="step-closed">
             <span className="step-num-closed">{num}</span>
             <h2>{header}</h2>
+            <p className="step-num-closed-middleHeader">{midHeader}</p>
             {props.showEditButton && <div onClick={restartSteps}>
                 <div></div>
                 <span>עריכה</span>

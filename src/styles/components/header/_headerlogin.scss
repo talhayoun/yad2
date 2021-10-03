@@ -1,0 +1,47 @@
+.headerlogin-container{
+    position: absolute;
+    top: 50px;
+    width: 170px;
+    background-color: #fff;
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 1 / 20%),
+                0 1px 18px 0 rgba(0, 0, 0, 1 / 12%),
+                0 6px 10px 0 rgba(0, 0, 0, 1 / 14%);
+
+    list-style-type: none;
+    padding: 0px;
+    z-index: 999;
+}
+
+.headerlogin-profile, .headerlogin-cars, .headerlogin-lastsearch, .headerlogin-logout{
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    width: 100% !important;
+    height: 30px !important;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 10px;
+    margin-bottom: 5px;
+    &:hover{
+        background-color: #eee;
+    }
+    div{
+        background-image: url("../../images/person-outline.svg");
+        height: 20px !important;
+        width: 20px !important;
+        margin-top: 0px !important;
+    }
+}
+
+.headerlogin-cars{
+    div{
+        background-image: url("../../images/swap-horizontal-outline.svg");
+    }
+}
+
+.headerlogin-lastsearch div{
+    background-image: url("../../images/refresh-circle-outline.svg");
+}
+
+.headerlogin-logout div{
+    background-image: url("../../images/male-outline.svg");
+}

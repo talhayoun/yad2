@@ -1,4 +1,5 @@
 .filtercontent{
+    position: relative;
     height: 100%;
     width: 100%;
     display: grid;
@@ -96,7 +97,7 @@
     grid-column-start: 5;
     grid-column-end: 6;
 
-    div{
+    .filtercontent-five-container{
         grid-row-start: 2;
         grid-row-end: 3;
         background-color: #eee;
@@ -118,7 +119,8 @@
 
         }
 
-        div{
+        div:first-child{
+            all:inherit;
             background-color: unset;
             height: 5px;
             width: 5px;

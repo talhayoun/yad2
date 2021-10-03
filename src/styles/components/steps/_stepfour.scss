@@ -83,7 +83,7 @@
 
 .stepfour-form{
     padding: 1% 5%;
-    div{
+    .stepfour-div{
         width: 206px;
         height: 64px;
         margin-bottom: 20px;
@@ -123,4 +123,7 @@
             font-size: 14px;
         }
     }
+}
+.DateInput_input{
+    font-size: 15px;
 }

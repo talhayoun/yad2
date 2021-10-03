@@ -43,7 +43,7 @@
 
 
 .header-upper-two-divs, .header-upper-one-divs{
-    height: 100%;
+    height: 75px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -66,7 +66,7 @@
 
 .header-upper-two-divs{
     
-    div{
+    div:first-child{
         height: 100%;
         width: 40px;
         background-repeat: no-repeat;
@@ -84,19 +84,29 @@
     }
 
     .header-upper-two-divs-three{
-
-        div{ 
+        .header-connect-container, .header-connected-container{ 
             margin-top: 0px;
             background-color: $myLightGrey;
             border-radius: 50px;
             height: 50px;
             width: 50px;
-
-            div{
-                background-image: url("../../images/icon-person.png");
-                background-position: top;
-                margin-top: 0px;
-            }
+            overflow: hidden;
+        }
+        .header-connected-container{
+            background-color: #fff1e5;
+        }
+        .header-connect-div{
+            background-image: url("../../images/icon-person.png");
+            background-position: top;
+            margin-top: 0px;
+            margin-right: 8px;
+        }
+        .header-connected-div{
+            text-align: center;
+            margin-top: 15px;
+            margin-right: 5px;
+            color: $myOrange;
+            font-weight: 700;
         }
     }
 }
@@ -109,6 +119,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
 
     &:hover{
         background: $myDarkGreen;
@@ -126,5 +137,21 @@
         width: max-content;
         padding: 10px;
         
+    }
+}
+
+.header-upper-two-divs-login-container{
+    display: flex;
+    align-items: center;
+    width: 100% !important;
+}
+
+.headerlogin-container{
+    display: none;
+}
+
+.header-login:hover{
+    .headerlogin-container{
+        display: block;
     }
 }

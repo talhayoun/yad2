@@ -9,8 +9,9 @@ import HouseNumber from '../StepTwo/HouseNumber';
 import Floor from '../StepTwo/Floor';
 import Neighborhood from '../StepTwo/Neighborhood';
 import RentalLocation from '../StepTwo/RentalLocation';
+import { StepTwoAction } from '../actions/publishActions';
 
-const StepTwo = ({ setStepsFinished }) => {
+const StepTwo = ({ setStepsFinished, publishData, dispatchPublishData }) => {
 
     const [cityValue, setCityValue] = useState("");
     const [streetValue, setStreetValue] = useState("");
@@ -19,8 +20,9 @@ const StepTwo = ({ setStepsFinished }) => {
     const [citiesList, setCitiesList] = useState([]);
     const [floorNumber, setFloorNumber] = useState("");
     const [totalFloorNumbers, setTotalFloorNumbers] = useState("");
-    const [errorMessage, setErrorMessage] = useState(["", "", "", "", "", ""])
     const [displayError, setDisplayError] = useState([false, false, false, false, false, false]);
+
+
     const onClickFormSubmit = (e) => {
         e.preventDefault();
         let assetError = assetType === "דירה או אולי פנטהאוז" ? true : false;
@@ -31,16 +33,21 @@ const StepTwo = ({ setStepsFinished }) => {
         let totalFloorError = totalFloorNumbers.length > 0 ? false : true;
         console.log([assetError, cityError, streetError, houseNumberError, floorError, totalFloorError])
         setDisplayError([assetError, cityError, streetError, houseNumberError, floorError, totalFloorError]);
+        if (!assetError && !cityError && !streetError && !houseNumberError && !floorError && !totalFloorError) {
+            dispatchPublishData(StepTwoAction(assetType, cityValue, streetValue, houseNumberValue, floorNumber, totalFloorNumbers))
+            setStepsFinished([true, true, false, false, false, false, false]);
+        }
     }
 
-    useEffect(()=>{
-        console.log(displayError, "##")
-        if(streetValue.length > 0){
-            if(!displayError[0] && !displayError[1] && !displayError[2] && !displayError[3] && !displayError[4] && !displayError[5]){
-                setStepsFinished([true, true, false, false, false, false, false]);
-            }
-        }
-    }, [displayError])
+    // useEffect(() => {
+    //     console.log(displayError, "##")
+    //     if (streetValue.length > 0 && floorNumber.length > 0 && totalFloorNumbers > 0 && cityValue.length > 0 && assetType !== "דירה או אולי פנטהאוז") {
+    //         if (!displayError[0] && !displayError[1] && !displayError[2] && !displayError[3] && !displayError[4] && !displayError[5]) {
+    //             dispatchPublishData(StepTwoAction(assetType, cityValue, streetValue, houseNumberValue, floorNumber, totalFloorNumbers))
+    //             setStepsFinished([true, true, false, false, false, false, false]);
+    //         }
+    //     }
+    // }, [displayError, setStepsFinished, dispatchPublishData, floorNumber, houseNumberValue, assetType, cityValue, streetValue, totalFloorNumbers])
 
     useEffect(() => {
         getCitySuggested().then(

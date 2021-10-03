@@ -1,0 +1,30 @@
+.advanced-filter-properties{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    // margin: 0px 40px;
+    border-bottom: 1px solid #ccc;
+    h3{
+        font-size: 1rem;
+        text-align: right;
+        margin: 30px 10px 0px;
+        grid-column-start: 1;
+        grid-column-end: 6;
+    }
+}
+
+.advanced-filter-checkbox{
+    padding: 10px 0;
+    width: 176px;
+    height: 45px;
+    display: inline-flex;
+    flex-flow: row wrap;
+    align-items: center;
+    text-align: right;
+    font-size: 16px;
+    margin-top: 5px;
+
+    input{
+        height: 16px !important;
+        width: 16px !important;
+    }
+}

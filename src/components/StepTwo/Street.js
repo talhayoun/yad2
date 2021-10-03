@@ -9,7 +9,9 @@ const Street = ({ cityValue, streetValue, setStreetValue, displayError }) => {
     const [error, setError] = useState(false);
 
     const onChangeInput = (userInput) => {
+        // console.log("lala", userInput)
         setStreetValue(userInput)
+        // console.log("lala", userInput)
         let currentStreets = [];
         for (let i = 0; i < streets.length; i++) {
             if (streets[i].includes(userInput)) {
@@ -28,22 +30,22 @@ const Street = ({ cityValue, streetValue, setStreetValue, displayError }) => {
     }
 
     const onBlurInput = () => {
-        if(streetValue.length > 0) setError(false)
-        if(lastCityValue !== streetValue){
+        if (streetValue.length > 0) setError(false)
+        if (lastCityValue !== streetValue) {
             setStreetValue("");
             setTimeout(() => {
                 setAutoCompleteStreetNames([]);
             }, 200);
         }
-    }   
-
-    useEffect(()=>{
-        if(displayError[2]) setError(true);
-        else setError(false);
-    },[displayError])
+    }
 
     useEffect(() => {
-        if (cityValue !== ""){
+        if (displayError[2]) setError(true);
+        else setError(false);
+    }, [displayError])
+
+    useEffect(() => {
+        if (cityValue !== "") {
             getStreetsSuggested(cityValue).then(
                 (res) => {
                     console.log(res, "in street");
@@ -56,10 +58,10 @@ const Street = ({ cityValue, streetValue, setStreetValue, displayError }) => {
                     }
                 }
             )
-        }else{
+        } else {
             setStreetValue("")
         }
-    }, [cityValue])
+    }, [cityValue, setStreetValue])
 
     return (
         <div className="steptwo-streets">
@@ -69,8 +71,8 @@ const Street = ({ cityValue, streetValue, setStreetValue, displayError }) => {
                 placeholder="הכנסת שם הרחוב"
                 value={streetValue}
                 onChange={(e) => onChangeInput(e.target.value)}
-                onBlur={()=> onBlurInput()}
-                />
+                onBlur={() => onBlurInput()}
+            />
             {autoCompleteStreetNames.length > 0 && <div className={streetValue.length > 0 ? "step-two-suggestedcity" : "none"}>
                 {autoCompleteStreetNames.map((street, index) => (
                     <p key={index} className="step-two-suggested-city" onClick={() => onClickSuggested(street)}>{street}</p>

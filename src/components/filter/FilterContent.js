@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import AdvancedFilter from '../AdvancedFilter/AdvancedFilter';
 
 const FilterContent = () => {
+    const [advancedFilter, setAdvancedFilter] = useState(false);
+
+
+    const onFormSubmit = (e) => {
+        e.preventDefault();
+    }
 
     return (
-        <form className="filtercontent">
+        <form className="filtercontent" onSubmit={onFormSubmit}>
             <div className="filtercontent-one">
                 <p>חפשו אזור, עיר, שכונה או רחוב</p>
                 <input placeholder="לדוגמה: פלורנטין" />
@@ -29,8 +36,8 @@ const FilterContent = () => {
                     <input placeholder="עד-"></input>
                 </div>
             </div>
-            <div className="filtercontent-five">
-                <div>
+            <div className="filtercontent-five" onClick={() => setAdvancedFilter(!advancedFilter)}>
+                <div className="filtercontent-five-container">
                     <div>+</div>
                     <p>חיפוש מתקדם</p>
                 </div>
@@ -41,6 +48,7 @@ const FilterContent = () => {
                     <p>חיפוש</p>
                 </div>
             </div>
+            {advancedFilter && <AdvancedFilter />}
         </form>
     );
 };

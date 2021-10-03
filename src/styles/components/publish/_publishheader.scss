@@ -18,6 +18,7 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
+        cursor: pointer;
     }
 
     h2{
@@ -38,12 +39,88 @@
     }
 
     .publisher-header-second-connect{
+        display: flex;
+        align-items: center;
+        position: relative;
         p{
             display: inline-block;
             margin-right: 5px;
             color: $myOrange;
             font-weight: 500;
         }
+        div{
+            background-image: url("../../images/person-outline.svg");
+            height: 20px;
+            width: 20px;
+            background-size: contain;
+        }
     }
 
+}
+
+.publishheader-ul{
+    position: absolute;
+    top: 15px;
+    background: #fff;
+    width: 200px;
+    font-size: 14px;
+    list-style-type: none;
+    // padding: 5px 20px 5px 20px;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0, 1/10%);
+    border: 1px solid #ccc;
+    height: 73px;
+    width: 160px;
+    padding: 0;
+    li{
+        margin-top: 10px;
+        padding: 4px 7px;
+        cursor: pointer;
+    }
+}
+
+.publisher-header-disconnect{
+    position: absolute;
+    margin: auto;
+    border-radius: 5px;
+    background: #fff;
+    width: 300px;
+    height: 196px;
+    top: 30%;
+    z-index: 999;
+    text-align: center;
+    h1{
+        font-size: 18px;
+        margin-bottom: 25px;
+        margin-top: 20px;
+    }
+    p{
+        margin-top: 10px;
+    }
+
+    .publisher-header-disconnect-yes{
+        color: $myOrange;
+        background: #fff;
+        border: 1px solid $myOrange;
+        text-align: center;
+        font-size: 14px;
+        display: inline-block;
+        height: 40px;
+        width: 131px;
+        border-radius: 2px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+    .publisher-header-disconnect-no{
+        color: #fff;
+        background-color: $myOrange;
+        border: none;
+        display: inline-block;
+        height: 40px;
+        width: 131px;
+        border-radius: 2px;
+        margin-right: 5px;
+        font-size: 15px;
+        cursor: pointer;
+        font-weight: 700;
+    }
 }

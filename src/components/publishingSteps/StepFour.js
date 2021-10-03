@@ -1,14 +1,36 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import PaymentAmount from '../StepFour/PaymentAmount';
+import Input from '../StepFour/Input';
 import StepContinueButton from './StepContinueButton';
+import Dates from '../StepFour/Dates';
+import { PublishContext } from '../context/PublishContext';
+import { StepFourAction } from '../actions/publishActions';
 
 const StepFour = ({ setStepsFinished }) => {
 
+    const { dispatchPublishData } = useContext(PublishContext);
+
     const [paymentAmount, setPaymentAmount] = useState("בחירת מספר תשלומים")
+    const [date, setDate] = useState("");
+    const [totalSize, setTotalSize] = useState("");
+    const [size, setSize] = useState("");
+    const [houseCommitte, setHouseCommitte] = useState("");
+    const [propertyTax, setPropertyTax] = useState("");
+    const [price, setPrice] = useState("");
+    const [displayError, setDisplayError] = useState([false, false, false]);
 
     const onSubmitForm = (e) => {
         e.preventDefault();
-        setStepsFinished([true, true, true, true, false, false, false])
+        let paymentValue = paymentAmount === "בחירת מספר תשלומים" ? true : false;
+        let totalSizeValue = totalSize === "" ? true : false;
+        let dateValue = date === "" ? true : false;
+        setDisplayError([paymentValue, totalSizeValue, dateValue]);
+        if (!paymentValue && !totalSizeValue && !dateValue) {
+            dispatchPublishData(StepFourAction(paymentAmount, houseCommitte, propertyTax, size, totalSize, price, date))
+            setStepsFinished([true, true, true, true, false, false, false])
+        }
     }
+
     return (
         <>
             <div className="stepfour-header">
@@ -23,49 +45,13 @@ const StepFour = ({ setStepsFinished }) => {
                 </div>
             </div>
             <form onSubmit={onSubmitForm} className="stepfour-form">
-                <div>
-                    <h6>מספר תשלומים*</h6>
-                    <select value={paymentAmount} placeholder="בחירת מספר תשלומים" onChange={(e) => setPaymentAmount(e.target.value)}>
-                        <option hidden="hidden" disabled="disabled">בחירת מספר תשלומים</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
-                        <option value="whatever">גמיש</option>
-                    </select>
-                </div>
-                <div>
-                    <h6>ועד בית</h6>
-                    <input placeholder="הכנסת סכום תשלום לועד בית" />
-                </div>
-                <div>
-                    <h6>ארנונה לחודשיים</h6>
-                    <input placeholder="סכום הארנונה לתשלום" />
-                </div>
-                <div>
-                    <h6>מ"ר בנוי</h6>
-                    <input placeholder='כמה מ"ר יש בנכס' />
-                </div>
-                <div>
-                    <h6>גודל במ"ר סך הכל *</h6>
-                    <input />
-                </div>
-                <div>
-                    <h6>מחיר</h6>
-                    <input placeholder="סכום מינימלי 100" />
-                </div>
-                <div>
-                    <h6>תאריך כניסה*</h6>
-                    {/* Add here dates picker like the udemy video */}
-                </div>
+                <PaymentAmount paymentAmount={paymentAmount} setPaymentAmount={setPaymentAmount} displayError={displayError} />
+                <Input header={"ועד בית"} placeholder={"הכנסת סכום תשלום לועד בית"} must={false} func={setHouseCommitte} displayError={displayError} />
+                <Input header={"ארנונה לחודשיים"} placeholder={"סכום הארנונה לתשלום"} func={setPropertyTax} displayError={displayError} />
+                <Input header={'מ"ר בנוי'} placeholder={'כמה מ"ר בנוי יש בנכס'} must={false} func={setSize} displayError={displayError} />
+                <Input header={'גודל במ"ר סך הכל'} func={setTotalSize} must={true} displayError={displayError} />
+                <Input header={"מחיר"} placeholder={"סכום מינימלי 100"} must={false} func={setPrice} displayError={displayError} />
+                <Dates setDate={setDate} displayError={displayError} />
                 <div className="stepfour-checkbox">
                     <input type="checkbox" />
                     <label>לטווח הארוך</label>

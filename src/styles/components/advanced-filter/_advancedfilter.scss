@@ -1,0 +1,64 @@
+.advanced-filter{
+    width: 960px;
+    height: 478px;
+    background: #fff;
+    display: grid;
+    grid-template-rows: 3fr 2fr 2fr 1fr;
+    grid-template-columns: 1fr;
+    position: absolute;
+    right: -20px;
+    top: 105px;
+    padding: 0px 30px;
+}
+
+.advanced-filter-thirdrow{
+    border-bottom: 1px solid #ccc;
+    height: 102px;
+    div{
+        display: inline-block;
+        margin-top: 30px;
+        margin-left: 20px;
+        label{
+            display: block;
+        }
+        input{
+            width: 332px;
+            height: 40px;
+        }
+        p{
+            display: inline-block;
+        }
+    }
+
+    .advanced-filter-thirdrow-seconddiv{
+        display: inline-flex;
+        align-items: center;
+        input{
+            height: 16px;
+            width: 16px;
+        }
+    }
+}
+
+.advanced-filter-fourthrow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button{
+        color: #fff;
+        font-weight: 700;
+        font-size: 16px;
+        background-color: $myOrange;
+        border: none;
+        text-align: center;
+        height: 40px;
+        width: 70px;
+        cursor: pointer;
+    }
+    span{
+        position: absolute;
+        left: 50px;
+        font-size: 13px;
+        cursor: pointer;
+    }
+}

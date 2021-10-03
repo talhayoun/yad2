@@ -1,0 +1,55 @@
+.advanced-filter-secondrow{
+    margin-top: 30px;
+    border-bottom: 1px solid #ccc;
+    label{
+        display: block;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+    select,input{
+        height: 40px;
+        width: 123px;
+        padding: 10px;
+        border-radius: 1px;
+        border: 1px solid #ccc;
+        font-size: 0.875rem;
+        outline: none;
+        margin-left: 4px;
+    }
+    .advanced-filter-checkbox{
+        width: unset !important;
+    }
+}
+
+.advanced-filter-secondrow-floorContainer, .advanced-filter-secondrow-sizeContainer{
+    width: 255px;
+    height: 61px;
+    display: inline-block;
+}
+.advanced-filter-secondrow-sizeContainer{
+    margin-right: 10px;
+}
+
+.advanced-filter-secondrow-date{
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 5px;
+    label{
+        font-size: 14px;
+        display: block;
+        margin-bottom: 5px;
+    }
+    input{
+        width: 188px;
+        height: 40px;
+
+        // &::before{
+        //     content: attr(placeholder) !important;
+        //     margin-right: 50px;
+        // }
+        // &:focus::before,
+        // &:valid::before{
+        //     content:"" ;
+        // }
+    }
+}

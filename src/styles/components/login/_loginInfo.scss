@@ -1,0 +1,79 @@
+.logininfo{
+    width: 430px;
+    margin-top: 100px;
+    margin-right: 30px;
+    h1{
+        font-size: 36px;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+    h1:first-child{
+        margin-bottom: 0;
+    }
+}
+
+.logininfo-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    margin-right: -40px;
+}
+
+.logininfo-first{
+    @extend %loginstyle;
+    div{
+        background-image: url("../../images/loginalarm.svg");
+        background-size: contain;
+        height: 60px;
+        width: 60px;
+        background-repeat: no-repeat;
+    }
+    h3{
+        font-size: 14px;
+        font-weight: 300;
+    }
+}
+.logininfo-second{
+    @extend %loginstyle;
+    
+    div{
+        background-image: url("../../images/loginchat.svg");
+        background-size: contain;
+        height: 60px;
+        width: 60px;
+        background-repeat: no-repeat;
+    }
+    h3{
+        font-size: 14px;
+        font-weight: 300;
+    }
+}
+.logininfo-third{
+    @extend %loginstyle;
+    div{
+        background-image: url("../../images/loginpublish.svg");
+        background-size: contain;
+        height: 60px;
+        width: 60px;
+        background-repeat: no-repeat;
+    }
+    h3{
+        font-size: 14px;
+        font-weight: 300;
+    }
+}
+
+.logininfo-fourth{
+    @extend %loginstyle;
+    div{
+        background-image: url("../../images/loginpersonal.svg");
+        background-size: contain;
+        height: 60px;
+        width: 60px;
+        background-repeat: no-repeat;
+    }
+    h3{
+        font-size: 14px;
+        font-weight: 300;
+    }
+}

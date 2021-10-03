@@ -1,0 +1,111 @@
+.signin-div, .signup-div{
+    width: 510px;
+    height: 434px;
+    background: white;
+    padding: 35px;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 1 / 10%);
+
+    h2{
+        text-align: center;
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+    label{
+        display: block;
+        margin-bottom:5px;
+        margin-top: 10px;
+    }
+    input{
+        width: 100%;
+        height:40px;
+        border: solid 1px rgb(204, 204, 204);
+        padding: 10px 15px 10px 35px;
+        border-radius: 4px;
+    }
+
+    .login-forgot-password{
+        float: left;
+        margin-top: 15px;
+        font-size: 14px;
+        color: $myOrange;
+        cursor: pointer;
+        font-weight: 700;
+    }
+
+    .login-button{
+        width: 100%;
+        background: $myOrange;
+        color: #fff;
+        text-align: center;
+        border-radius: 30px;
+        height: 40px;
+        font-size: 18px;
+        border: none;
+        margin-top: 50px;
+        cursor: pointer;
+    }
+    .login-no-account{
+        font-size: 13px;
+        text-align: center;
+        margin-top: 30px;
+        span{
+            color: $myOrange;
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+        }
+    }
+}
+.loginform-div-password{
+    position: relative;
+}
+.view-password{
+    background-image: url("../../images/viewpassword.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 5px;
+    left: 30px;
+    cursor: pointer;
+}
+.view-password-disabled{
+    background-image: url("../../images/viewpassword-disabled.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 5px;
+    left: 30px;
+    cursor: pointer;
+}
+
+.signup-div{
+    height: 474px;
+    .step-two-error-message{
+        margin: 0;
+    }   
+}
+
+.loginform-signup-firstdiv, .loginform-signup-seconddiv{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    input{
+        height: 16px;
+        width: 16px;
+        &:checked{
+            background-color: $myOrange;
+        }
+    }
+    p{
+        font-size: 14px;
+    }
+    span{
+        color: $myOrange;
+        font-weight: 700;
+    }
+}

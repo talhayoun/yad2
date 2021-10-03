@@ -4,15 +4,19 @@ import PropertyBody from '../PropertyBody/PropertyBody';
 import SecondaryAd from '../secondaryAd/SecondaryAd';
 import TopAd from '../topAd/TopAd';
 
-const Body = () => (
-    <div className="body">
-        <div className="body-container">
-            <TopAd />
-            <Filter />
-            <SecondaryAd />
-            <PropertyBody />
+const Body = () => {
+
+
+    return (
+        <div className="body">
+            <div className="body-container">
+                <TopAd />
+                <Filter />
+                <SecondaryAd />
+                <PropertyBody />
+            </div>
         </div>
-    </div>
-);
+    )
+};
 
 export default Body;

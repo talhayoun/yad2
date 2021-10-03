@@ -1,7 +1,26 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
+import { addAd } from '../../server/publishRequests';
+import { PublishContext } from '../context/PublishContext';
 import StepSevenTick from './StepSevenTick';
-
+import { LoginContext } from "../context/LoginContext";
 const StepSeven = () => {
+
+    const { publishData } = useContext(PublishContext);
+    const { userData } = useContext(LoginContext);
+    useEffect(() => {
+        console.log(publishData, "seven")
+    }, [publishData])
+
+    const submitForm = () => {
+        console.log(publishData, "%")
+        console.log(userData)
+        addAd(publishData, userData).then(
+            (res) => {
+                console.log(res)
+            }
+        )
+    }
+
     return (
         <>
             <div className="stepseven-header">
@@ -41,7 +60,7 @@ const StepSeven = () => {
                             <div>X</div>
                             <p>הקצפה אטומטית לחסכון בזמן</p>
                         </div>
-                        <button>חינם \ 40 ימים</button>
+                        <button onClick={submitForm}>חינם \ 40 ימים</button>
                     </div>
                     <div className="stepseven-option-highlighted">
                         <h3>מודגשת</h3>

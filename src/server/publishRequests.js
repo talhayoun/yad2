@@ -25,3 +25,16 @@ export const getStreetsSuggested = async (userInput) => {
         throw new Error(err);
     }
 }
+
+export const addAd = async (data, userData) => {
+    try {
+        console.log(data)
+        console.log(userData)
+        // const cookieData =
+        const res = await Axios.post(`${process.env.REACT_APP_SERVER_API}/new-ad`, { ...data, userEmail: userData.email });
+        console.log(res)
+        // STEP SEVEN SHOULD SEND HERE AD DATA
+    } catch (err) {
+        throw new Error(err);
+    }
+}

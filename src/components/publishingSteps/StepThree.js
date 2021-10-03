@@ -1,18 +1,49 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import Balcony from '../StepThree/Balcony';
+import TextArea from '../StepThree/Textarea';
+import Parking from '../StepThree/Parking';
+import Proprties from '../StepThree/Proprties';
+import Rooms from '../StepThree/Rooms';
 import StepContinueButton from './StepContinueButton';
-import StepThreeProperty from './StepThreeProperty';
+import { StepThreeAction } from '../actions/publishActions';
 
-const StepThree = ({ setStepsFinished }) => {
+const StepThree = ({ setStepsFinished, dispatchPublishData, publishData }) => {
 
-    const [activeClassParking, setActiveClassParking] = useState(["", "", "", ""]);
-    const [activeClassBalcony, setActiveClassBalcony] = useState(["", "", "", ""]);
-    const [textarea, setTextArea] = useState("")
-
+    const [rooms, setRooms] = useState("בחירת מספר חדרים");
+    const [textarea, setTextArea] = useState("");
+    const [parking, setParking] = useState("ללא");
+    const [balcony, setBalcony] = useState("ללא")
+    const [proprties, setProprties] = useState([]);
+    const [displayError, setDisplayError] = useState([false, false])
+    const [formClicked, setFormClicked] = useState(false)
+    const [textAreaMessageDisplay, setTextAreaMessageDisplay] = useState(false);
 
     const onFormSubmit = (e) => {
         e.preventDefault();
-        setStepsFinished([true, true, true, false, false, false, false]);
+        let roomsValue = rooms === "בחירת מספר חדרים" ? true : false;
+        let textareaValue = textarea === "" ? true : false;
+        setDisplayError([roomsValue, textareaValue]);
+        // setFormClicked(true)
+        if (!roomsValue && !textareaValue) {
+            dispatchPublishData(StepThreeAction(rooms, parking, balcony, proprties, textarea))
+            setStepsFinished([true, true, true, false, false, false, false]);
+        }
     }
+
+    // useEffect(() => {
+    //     if (formClicked && textAreaMessageDisplay) {
+    //         if (!displayError[0]) {
+    //             dispatchPublishData(StepThreeAction(rooms, parking, balcony, proprties, textarea))
+    //             setStepsFinished([true, true, true, false, false, false, false]);
+    //             setFormClicked(false)
+    //         }
+    //     }
+    // }, [displayError, setStepsFinished, dispatchPublishData, rooms, parking, balcony, proprties, textarea, formClicked, textAreaMessageDisplay])
+
+    useEffect(() => {
+        console.log(publishData, "after step two")
+    }, [publishData])
+
 
     return (
         <>
@@ -21,51 +52,11 @@ const StepThree = ({ setStepsFinished }) => {
                 <h2>על הנכס</h2>
             </div>
             <form onSubmit={onFormSubmit} className="stepthree-form">
-                <div>
-                    <h6>מספר חדרים*</h6>
-                    <select placeholder="בחירת מספר חדרים">
-                        <option hidden="hidden" disabled="disabled">בחירת מספר חדרים</option>
-                    </select>
-                </div>
-                <div className="stepthree-park">
-                    <h6>חניה</h6>
-                    <div onClick={() => setActiveClassParking(["active", "", "", ""])} className={`stepthree-park-first ${activeClassParking[0]}`}>ללא</div>
-                    <div onClick={() => setActiveClassParking(["", "active", "", ""])} className={activeClassParking[1]}>1</div>
-                    <div onClick={() => setActiveClassParking(["", "", "active", ""])} className={activeClassParking[2]}>2</div>
-                    <div onClick={() => setActiveClassParking(["", "", "", "active"])} className={`stepthree-park-last ${activeClassParking[3]}`}>3</div>
-                </div>
-                <div className="stepthree-balcony">
-                    <h6>מרפסת</h6>
-                    <div onClick={() => setActiveClassBalcony(["active", "", "", ""])} className={`stepthree-park-first ${activeClassBalcony[0]}`}>ללא</div>
-                    <div onClick={() => setActiveClassBalcony(["", "active", "", ""])} className={activeClassBalcony[1]}>1</div>
-                    <div onClick={() => setActiveClassBalcony(["", "", "active", ""])} className={activeClassBalcony[2]}>2</div>
-                    <div onClick={() => setActiveClassBalcony(["", "", "", "active"])} className={`stepthree-park-last ${activeClassBalcony[3]}`}>3</div>
-                </div>
-                <div className="stepthree-properties">
-                    <h5>מאייפני הכנס</h5>
-                    <StepThreeProperty header={"מיזוג"} />
-                    <StepThreeProperty header={'ממ"ד'} />
-                    <StepThreeProperty header={'מחסן'} />
-                    <StepThreeProperty header={'דלתות פנדור'} />
-                    <StepThreeProperty header={'ריהוט'} />
-                    <StepThreeProperty header={'גישה לנכים'} />
-                    <StepThreeProperty header={'מעלית'} />
-                    <StepThreeProperty header={'מזגן תדיראן'} />
-                    <StepThreeProperty header={'משופצת'} />
-                    <StepThreeProperty header={'סורגים'} />
-                    <StepThreeProperty header={'לשותפים'} />
-                    <StepThreeProperty header={'חיות מחמד'} />
-                    <StepThreeProperty header={'מטבח כשר'} />
-                    <StepThreeProperty header={'דוד שמש'} />
-                </div>
-                <div className="stepthree-textarea">
-                    <h6>מה חשוב לך שידעו על הנכס?</h6>
-                    <div>
-                        <p>פירוט הנכס</p>
-                        <span>{textarea.length}/400</span>
-                        <textarea value={textarea} onChange={(e) => setTextArea(e.target.value)} maxLength="400" cols="5" placeholder="זה המקום לתאר את הפרטים הבולטים, למשל האם נערך שיפוץ במבנה, מה שופץ, כיווני אוויר, האווירה ברחוב וכו'"></textarea>
-                    </div>
-                </div>
+                <Rooms setRooms={setRooms} displayError={displayError} rooms={rooms} />
+                <Parking setParking={setParking} />
+                <Balcony setBalcony={setBalcony} />
+                <Proprties setProprties={setProprties} proprties={proprties} />
+                <TextArea setTextArea={setTextArea} textarea={textarea} displayError={displayError} setTextAreaMessageDisplay={setTextAreaMessageDisplay} textAreaMessageDisplay={textAreaMessageDisplay} />
                 <StepContinueButton />
             </form>
         </>

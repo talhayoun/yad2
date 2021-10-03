@@ -107,6 +107,102 @@
     }
 }
 
+.steps-black-box{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left:0;
+    top: 0;
+    background: #000;
+    z-index: 99;
+    opacity: .6;
+}
+
+.stepthree-textarea-popupbox{
+    background: #fff;
+    border-radius: 5px;
+    position: fixed;
+    width: 425px;
+    height: 486px;
+    margin: auto;
+    box-shadow: 0 2px 4px 0 rgba(12,0, 51, 1 / 10%);
+    z-index: 999;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    .stepthree-textarea-popupbox-container{
+        text-align: center;
+        margin: 0 auto;
+        
+        h2{
+            font-size: 20px;
+            color: #363636;
+            margin: 45px auto 26px auto;
+        }
+        p{
+            font-size: 16px;
+        }
+
+        .stepthree-textarea-popupbox-textcontainer{
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            .stepthree-textarea-popupbox-textcontainer-firstdiv{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }   
+        }
+
+        .stepthree-textarea-popupbox-textcontainer-seconddiv{
+            position: relative;
+
+            textarea{
+                font-size: 1rem;
+                padding: 16px 10px 20px 10px;
+                height: 214px;
+                width: 100%;
+            }
+            .stepthree-textarea-popupbox-textcontainer-seconddiv-X{
+                position: absolute;
+                top: 10px;
+                left: 15px;
+            }
+            .stepthree-textarea-popupbox-textcontainer-seconddiv-buttons{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 10px;
+                .stepthree-textarea-popupbox-firstbutton{
+                    color: #fff;
+                    background-color: $myOrange;
+                    width: 221px;
+                    border: none;
+                    font-size: 18px;
+                    border-radius: 4px;
+                    font-weight: 600;
+                    cursor: pointer;
+                    height: 46px;
+
+                }
+                .stepthree-textarea-popupbox-secondbutton{
+                    height: 46px;
+                    width: 106px;
+                    border-radius: 4px;
+                    background-color: #bfbebe;
+                    outline: none;
+                    border: none;
+                    cursor: pointer;
+                    color: #fff;
+                    font-weight: 600;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+
 .active{
     background-color: #eee !important;
 }
