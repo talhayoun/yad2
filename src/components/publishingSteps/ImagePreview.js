@@ -6,6 +6,7 @@ const ImagePreview = (props) => {
     const [imagePreview, setImagePreview] = useState("");
 
     useEffect(() => {
+        console.log(image)
         if (image.length > 0) {
             let [file] = image;
             file['id'] = nanoid();

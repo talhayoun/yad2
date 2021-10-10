@@ -42,7 +42,7 @@ export const checkUserExists = async (email) => {
 
 export const verifyCookie = async (email, token) => {
     try {
-        const res = await Axios.post(`${process.env.REACT_APP_SERVER_API}/verify-token`, { email, token });
+        const res = await Axios.post(`${process.env.REACT_APP_SERVER_API}/verify-token`, { email, token }, { headers: { token: token } });
         if (!res.data.message) {
             throw new Error(res.data.err);
         }

@@ -28,13 +28,49 @@ export const getStreetsSuggested = async (userInput) => {
 
 export const addAd = async (data, userData) => {
     try {
-        console.log(data)
-        console.log(userData)
-        // const cookieData =
-        const res = await Axios.post(`${process.env.REACT_APP_SERVER_API}/new-ad`, { ...data, userEmail: userData.email });
+        let newFormData = new FormData();
+        for (let i = 0; i < data.images.length; i++) {
+            newFormData.append("images", data.images[i][0]);
+        }
+        if (data.mainImage !== "")
+            newFormData.append('images', renameFile(data.mainImage[0], `mainImage - ${data.mainImage[0].name}`));
+        if (data.video !== "")
+            newFormData.append('images', renameFile(data.video[0], `mainVideo - ${data.video[0].name}`));
+        newFormData.append('assetType', data.assetType);
+        newFormData.append('balcony', data.balcony);
+        newFormData.append('city', data.city);
+        newFormData.append('date', data.date);
+        newFormData.append('email', data.email);
+        newFormData.append('floorNumber', data.floorNumber);
+        newFormData.append('houseCommitte', data.houseCommitte);
+        newFormData.append('parking', data.parking);
+        newFormData.append('paymentAmount', data.paymentAmount);
+        newFormData.append('phone', data.phone);
+        newFormData.append('price', data.price);
+        newFormData.append('propertyTax', data.propertyTax);
+        newFormData.append('properties', [...data.properties]);
+        newFormData.append('roomsNumber', data.roomsNumber);
+        newFormData.append('size', data.size);
+        newFormData.append('street', data.street);
+        newFormData.append('textarea', data.textarea);
+        newFormData.append('totalFloorNumber', data.totalFloorNumber);
+        newFormData.append('totalSize', data.totalSize);
+        newFormData.append('username', data.username);
+        newFormData.append('userEmail', userData.email)
+        console.log(Array.from(newFormData))
+        const res = await Axios.post(`${process.env.REACT_APP_SERVER_API}/new-ad`, newFormData, { headers: { "Content-Type": `multipart/form-data; boundary=----WebKitFormBoundaryePkpFF7tjBAqx29L`, token: userData.token } });
         console.log(res)
-        // STEP SEVEN SHOULD SEND HERE AD DATA
+        if (res.data?.ad) {
+            return res.data;
+        }
     } catch (err) {
         throw new Error(err);
     }
+}
+
+function renameFile(originalFile, newName) {
+    return new File([originalFile], newName, {
+        type: originalFile.type,
+        lastModified: originalFile.lastModified,
+    });
 }

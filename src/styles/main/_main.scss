@@ -11,6 +11,7 @@ html, body{
     }
 }
 
+
 %input{
     height: 40px;
     border-radius: 1px;
@@ -26,4 +27,13 @@ html, body{
     grid-template-rows: 1fr 1fr;
     margin: 0 auto;
     text-align: center;
+}
+
+%img{
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+    height: 180px;
+    width: 200px;
+
 }

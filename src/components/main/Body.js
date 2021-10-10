@@ -15,6 +15,7 @@ const Body = () => {
                 <SecondaryAd />
                 <PropertyBody />
             </div>
+            <div className="body-body"></div>
         </div>
     )
 };

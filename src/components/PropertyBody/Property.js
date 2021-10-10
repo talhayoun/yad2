@@ -1,50 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import PropertyAfter from './PropertyAfter';
+import PropertyBefore from './PropertyBefore';
+import PropertyExtra from './PropertyExtra';
 
-const Property = () => {
+const Property = (props) => {
+
+
+    const [extraData, setExtraData] = useState(false);
+
+    useEffect(() => {
+        console.log(props)
+    }, [])
     return (
-        <div className="property">
-            <div className="property-one">
-                <div className="property-one-first">
-                    <div></div>
-                    <div className="property-one-heart">
-                        <div></div>
-                        <div className="property-one-heart-seconddiv"></div>
-                    </div>
-                </div>
-                <div className="property-one-second">
-                    <p>ישראל טלר 11</p>
-                    <p className="property-one-second-secondp">דירה, ב'/ צפון מערב העיר, רחובות</p>
-                </div>
-
-            </div>
-            <div className="property-two">
-                <div className="property-two-data">
-                    <p>2</p>
-                    <p>חדרים</p>
-                </div>
-                <div className="property-two-data">
-                    <p>3</p>
-                    <p>קומה</p>
-                </div>
-                <div className="property-two-data">
-                    <p>50</p>
-                    <p>מ"ר</p>
-                </div>
-            </div>
-            <div className="property-three">
-                <div className="property-three-newtab">
-                    <div></div>
-                    <p></p>
-                </div>
-                <div className="property-three-price">
-                    <p>3150 ₪</p>
-                </div>
-                <div className="property-three-update">
-                    <p></p>
-                </div>
-            </div>
-        </div>
+        <>
+            {!extraData && <PropertyBefore data={{ ...props.data }} setExtraData={setExtraData} extraData={extraData} />}
+            {extraData && <PropertyAfter data={{ ...props.data }} setExtraData={setExtraData} extraData={extraData} />}
+            {extraData && <PropertyExtra data={props.data} />}
+        </>
     );
 };
-
+//                {extraData && <button className="property-three-phone">להצגת מספר טלפון</button>}
 export default Property;

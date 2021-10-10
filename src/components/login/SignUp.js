@@ -10,18 +10,19 @@ const SignUp = ({ setSignup }) => {
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("");
     const [phone, setPhone] = useState("");
+    const [checkbox, setCheckBox] = useState(true);
 
     const [firstFormClicked, setFirstFormClicked] = useState(false);
 
 
     const onFormSubmit = (e) => {
-        e.preventDefault()
+        // e.preventDefault()
         let firstNameError = firstName === "" ? true : false;
         let lastNameError = lastName === "" ? true : false;
         let phoneError = phone.length < 9 ? true : false;
         let emailError = email === "" ? true : false;
         let passwordError = password === "" ? true : false;
-        if (!firstNameError && !lastNameError && !phoneError && !emailError && !passwordError) {
+        if (!firstNameError && !lastNameError && !phoneError && !emailError && !passwordError && checkbox) {
             signUpUser(email, password, phone, firstName, lastName).then(
                 (res) => {
                     if (res.message) {
@@ -49,6 +50,8 @@ const SignUp = ({ setSignup }) => {
                         setPhone={setPhone}
                         setLastName={setLastName}
                         lastName={lastName}
+                        checkbox={checkbox}
+                        setCheckBox={setCheckBox}
                         onFormSubmit={onFormSubmit}
                     /> :
                     <SignUpFirstForm

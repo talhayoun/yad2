@@ -1,12 +1,19 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { addAd } from '../../server/publishRequests';
 import { PublishContext } from '../context/PublishContext';
 import StepSevenTick from './StepSevenTick';
 import { LoginContext } from "../context/LoginContext";
+import Spinner from '../spinner/Spinner';
+import { useHistory } from 'react-router-dom';
 const StepSeven = () => {
 
     const { publishData } = useContext(PublishContext);
     const { userData } = useContext(LoginContext);
+    const [spinner, setSpinner] = useState(false);
+
+
+    const history = useHistory()
+
     useEffect(() => {
         console.log(publishData, "seven")
     }, [publishData])
@@ -14,9 +21,11 @@ const StepSeven = () => {
     const submitForm = () => {
         console.log(publishData, "%")
         console.log(userData)
+        setSpinner(true);
         addAd(publishData, userData).then(
             (res) => {
-                console.log(res)
+                setSpinner(false);
+                history.push('/')
             }
         )
     }
@@ -76,6 +85,7 @@ const StepSeven = () => {
                     <p>אני מאשר קבלת דיוור פרסומי הקשור למודעה שפרסמתי באתר יד 2 (להסרה - יש להוריד את הסימון בתיבה)</p>
                 </div>
             </div>
+            {spinner && <Spinner />}
         </>
     );
 };

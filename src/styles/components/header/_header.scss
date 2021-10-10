@@ -1,6 +1,5 @@
 .header-container{
     height: 5rem;
-    width: 100vw;
     border-top: 5px solid $myOrange;
 
     .header-upper-grid{
@@ -9,6 +8,8 @@
         grid-template-rows: 1fr;
         height: 100%;
         box-shadow: 2px 2px 7px gray;
+        z-index: 10;
+        background: #fff;
 
         .header-upper-one{
             grid-column-start: 1;

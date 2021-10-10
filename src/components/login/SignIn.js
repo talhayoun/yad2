@@ -30,7 +30,12 @@ const SignIn = ({ setSignup }) => {
         e.preventDefault();
         signInUser(email, password).then(
             (res) => {
-                if (res) {
+                console.log(res)
+                if (res.err) {
+                    setError(true)
+                    setErrorMessage(res.err);
+                }
+                if (res.token && res.firstName && res.lastName && res.email) {
                     setCookie(res.email, res.token, res.firstName, res.lastName);
                     dispatchUserData(LoginAction(res.email, res.token, res.firstName, res.lastName));
                     history.push('/');

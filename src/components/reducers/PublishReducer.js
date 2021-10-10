@@ -8,7 +8,7 @@ export const publishInitialState = {
     roomsNumber: "",
     parking: "",
     balcony: "",
-    proprties: "",
+    properties: "",
     textarea: "",
     paymentAmount: "",
     houseCommitte: "",

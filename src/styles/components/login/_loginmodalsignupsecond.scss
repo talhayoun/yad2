@@ -92,3 +92,13 @@
     color: #ccc !important;
     cursor: not-allowed !important;
 }
+
+.loginmodal-secondform-selectdiv{
+    display:inline;
+}
+
+.secondform-select-error{
+    position: absolute;
+    bottom: 60px;
+    left: 80px;
+}

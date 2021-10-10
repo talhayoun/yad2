@@ -1,0 +1,41 @@
+.filtercontent-assettype-container{
+    width: 277px;
+    background: #fff;
+    position: absolute;
+    top: 65px;
+    right: 195px;
+
+    div{
+        align-items: center;
+        justify-content: start;
+        background: #f9f9f9;
+        padding: 0 20px;
+        border: none;
+        margin-bottom: 10px;
+        position: relative;
+        display: flex;
+        height: 44px;
+        p{
+            font-size: 16px;
+            color: unset;
+            width: 90%;
+        }
+    }
+    .arrow-down, .arrow-up{
+        position: absolute;
+        left: 10px;
+    }
+
+    .advanced-filter-checkbox{
+        width: 100%;
+        background: #fff;
+        border-bottom: 1px solid #ccc;
+
+    }
+
+    span{
+        float: left;
+        color: $myOrange;
+        cursor: pointer;
+    }
+}

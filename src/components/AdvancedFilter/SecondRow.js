@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import CheckBox from './CheckBox';
 
-const SecondRow = ({ floorFrom, setFloorFrom, floorTo, setFloorTo, sizeFrom, setSizeFrom, sizeTo, setSizeTo, date, setDate }) => {
+const SecondRow = ({ setFloorFrom, setFloorTo, sizeFrom, setSizeFrom, sizeTo, setSizeTo, date, setDate }) => {
 
 
     const onChangeSizeFrom = (text, func) => {

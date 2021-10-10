@@ -8,12 +8,12 @@ export const StepTwoAction = (assetType, city, street, houseNumber, floorNumber,
     totalFloorNumber
 });
 
-export const StepThreeAction = (roomsNumber, parking, balcony, proprties, textarea) => ({
+export const StepThreeAction = (roomsNumber, parking, balcony, properties, textarea) => ({
     type: "STEPTHREE",
     roomsNumber,
     parking,
     balcony,
-    proprties,
+    properties,
     textarea
 });
 

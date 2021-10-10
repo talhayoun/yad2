@@ -1,19 +1,48 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { getAllAds } from '../../server/propertyRequests';
+import { addAd } from '../actions/adsActions';
+import { AdsContext } from '../context/AdsContext';
 import Property from './Property';
 
 const PropertyBody = () => {
 
     const [arrow, setArrow] = useState("arrow-down")
+    const [ads, setAds] = useState([]);
 
     const changeArrowStyle = () => {
         setArrow(arrow === "arrow-down" ? "arrow-up" : "arrow-down");
     }
 
+    const { adData, dispatchAdData } = useContext(AdsContext);
+
+    useEffect(() => {
+        getAllAds().then(
+            (res) => {
+                if (res.ads.length > 0) {
+                    let adsList = [];
+                    for (let i = 0; i < res.ads.length; i++) {
+                        adsList.push(res.ads[i]);
+                        dispatchAdData(addAd(res.ads[i]));
+
+                    }
+                    // setAds([...adsList]);
+                }
+            },
+            (err) => {
+                console.log(err);
+            }
+        )
+    }, [])
+
+    useEffect(() => {
+        console.log(adData, "&*")
+    }, [adData])
+
     return (
         <div className="propertybody">
             <div className="propertybody-topheader">
                 <h1>נדל"ן להשכרה</h1>
-                <p>מציג X מודעות</p>
+                <p>מציג {adData.length} מודעות</p>
             </div>
             <div className="propertybody-filter">
                 <div className="propertybody-filterby-container">
@@ -34,7 +63,12 @@ const PropertyBody = () => {
                     </div>
                 </div>
             </div>
-            <Property />
+            {adData.ads.length > 0 && adData.ads.map((ad) => (
+                <Property
+                    data={{ ...ad }}
+                    key={ad._id}
+                />
+            ))}
         </div>
     );
 };
