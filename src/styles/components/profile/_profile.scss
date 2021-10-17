@@ -1,0 +1,75 @@
+.profile{
+    height:60vh;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 8%;
+    border: 3px solid $myOrange;
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+.profile-nav{
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+    border-left: 2px solid #ccc;
+}
+.profile-body{
+    height: 100%;
+}
+
+.profile-personal-email div, .profile-personal-phone div, .profile-personal-name div{
+    background-image: url("../../images/email.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 20px;
+    width: 20px;
+}
+
+.profile-personal-phone div{
+    background-image: url("../../images/phone.png");
+}
+.profile-personal-name div{
+    background-image: url("../../images/user-icon.jfif");
+}
+
+.profile-personal-email, .profile-personal-phone, .profile-personal-name{
+    display: grid;
+    grid-template-columns: 10% 90%;
+    margin: 20px;
+    margin-top: 30px;
+}
+
+
+.profile-body{
+    h1{
+        text-align: center;
+    }
+    .profile-miniads-container{
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+
+.miniad{
+    width: 250px;
+    height: 200px;
+    box-shadow: 2px 2px 2px 2px #ccc;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    cursor: pointer;
+    img{
+        height: 145px;
+        width: 245px;
+        margin-top: 2px;
+    }
+
+    div{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+}

@@ -25,11 +25,28 @@ export const filterAdsExtra = async (properties, floorFrom, floorTo, sizeFrom, s
     }
 }
 
-export const filterAds = async (assetName, assetType, rooms, priceFrom, priceTo) => {
+export const filterAds = async (assetName, assetType, roomFrom, roomTo, priceFrom, priceTo, assetValue) => {
     try {
-        const res = await Axios.post(`${process.env.REACT_APP_SERVER_API}/ads/filter`, { assetName, assetType, rooms, priceFrom, priceTo })
+        console.log(priceFrom, priceTo)
+        const res = await Axios.post(`${process.env.REACT_APP_SERVER_API}/ads/filter`, { assetName, assetType, roomFrom, roomTo, priceFrom, priceTo, assetValue })
         console.log(res)
+        if (res.data.filterAd) {
+            return res.data.filterAd;
+        }
+        throw new Error("Failed to filter")
     } catch (error) {
+        throw new Error(error);
+    }
+}
 
+export const getAdById = async (ID) => {
+    try {
+        const res = await Axios.post(`${process.env.REACT_APP_SERVER_API}/getAd`, { ID })
+        if (res.data?.ad) {
+            return res.data;
+        }
+        throw new Error("failed to get ad")
+    } catch (err) {
+        throw new Error(err);
     }
 }

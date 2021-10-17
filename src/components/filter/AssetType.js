@@ -15,7 +15,6 @@ const AssetType = (props) => {
         }
     }, [props.roomsCheckBox])
 
-
     useEffect(() => {
         if (props.housesCheckBox)
             props.setHousesCheckBoxList(['בית פרטי\\קוט"ג', "דו משפחתי", "משק חקלאי\\נחלה", "משק עזר"])

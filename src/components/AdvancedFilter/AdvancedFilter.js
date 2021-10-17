@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { filterAdsExtra } from '../../server/propertyRequests';
-import { adFilters } from '../actions/adsActions';
+import { adEmpty, adFilters } from '../actions/adsActions';
 import { AdsContext } from '../context/AdsContext';
 import Properties from './Properties';
 import SecondRow from './SecondRow';
@@ -29,6 +29,9 @@ const AdvancedFilter = ({ setAdvancedFilter }) => {
                 if (res.length > 0) {
                     dispatchAdData(adFilters(res));
                 }
+            },
+            (err) => {
+                dispatchAdData(adEmpty())
             }
         );
 

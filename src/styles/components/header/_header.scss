@@ -15,7 +15,7 @@
             grid-column-start: 1;
             grid-column-end: 2;
             display: flex;
-            width: 70%;
+            width: 585px;
             justify-content: space-between;
             align-items: center;
             margin-right: 10px;
@@ -35,7 +35,7 @@
 .header-upper-one-div{
     background-image: url("../../images/yad2Logo.png");
     height: 50px;
-    width: 70px;
+    width: 150px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
@@ -155,4 +155,10 @@
     .headerlogin-container{
         display: block;
     }
+}
+.header-upper-one-divs-phone{
+    display: none;
+}
+.header-upper-one-phonestyle{
+    display: none;
 }

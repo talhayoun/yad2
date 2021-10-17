@@ -1,0 +1,37 @@
+@media only screen and (max-width: 1635px){
+    .header-upper-two-divs p{
+        display: none;
+    }
+}
+@media only screen and (max-width: 1255px){
+    .header-upper-one-divs{
+        display: none;
+    }
+    .header-upper-one-divs-phone{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 105px;
+        div{
+            background-image: url("../../images/drop-down.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 30px;
+            width: 30px;
+
+        }
+    }
+    .header-container{
+        .header-upper-grid{
+            .header-upper-one{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                width: 350px;
+
+                .header-upper-one-div{
+                    height: 80px;
+                }
+            }
+        }
+    }
+}

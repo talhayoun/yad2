@@ -38,7 +38,7 @@ const ShowImage = ({ props, count, setCount, setShowImage }) => {
         <>
             <div className="showImage-blackscreen"></div>
             <div className="showImage">
-                <img src={currentImage.image}></img>
+                <img src={currentImage?.image || "https://yad2-main.s3.eu-west-1.amazonaws.com/nodisplay.png"}></img>
                 <div className="showImage-div">{`מציג ${count + 1} מתוך ${images.length} מודעות`}</div>
                 <div className="arrow-right-another" onClick={onClickForward}></div>
                 <div className="arrow-left-another" onClick={onClickBackward}></div>

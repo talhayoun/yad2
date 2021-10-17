@@ -25,6 +25,7 @@ const SignUp = ({ setSignup }) => {
         if (!firstNameError && !lastNameError && !phoneError && !emailError && !passwordError && checkbox) {
             signUpUser(email, password, phone, firstName, lastName).then(
                 (res) => {
+                    console.log(res)
                     if (res.message) {
                         setSignup(false);
                     } else {

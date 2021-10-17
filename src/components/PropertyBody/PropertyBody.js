@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { getAllAds } from '../../server/propertyRequests';
-import { addAd } from '../actions/adsActions';
+import { addAd, adEmpty } from '../actions/adsActions';
 import { AdsContext } from '../context/AdsContext';
 import Property from './Property';
 
@@ -16,6 +16,7 @@ const PropertyBody = () => {
     const { adData, dispatchAdData } = useContext(AdsContext);
 
     useEffect(() => {
+        dispatchAdData(adEmpty())
         getAllAds().then(
             (res) => {
                 if (res.ads.length > 0) {

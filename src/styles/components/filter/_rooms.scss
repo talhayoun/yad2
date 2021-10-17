@@ -1,0 +1,25 @@
+.filtercontent-rooms-container{
+    width: 180px;
+    height: 80px;
+    background: #fff;
+    padding: 15px;
+    position: absolute;
+    right: 37.5%;
+    top: 80%;
+    display: flex;
+
+    select{
+        height: 40px;
+        background-color: #fff;
+        font-size: .875rem;
+        border: 1px solid #ccc;
+        border-radius: 1px;
+        width: 70px;
+        outline: none;
+        cursor: pointer;
+    }
+}
+
+.filtercontent-rooms-container-inputdiv{
+    display: flex;
+}

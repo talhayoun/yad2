@@ -1,0 +1,35 @@
+.filtercontent-showOptions{
+    position: absolute;
+    bottom: 0;
+    background: #fff;
+    width: 450px;
+    height: fit-content;
+    z-index: 8;
+    right: -5px;
+    top: 70px;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+.multipleoptions-main{
+    color: #989898;
+    font-size: 14px;
+    padding: 5px 10px 0 10px;
+    height: 30px;
+}
+
+.multipleoptions-header{
+    height: 30px;
+    background-color: #f4f4f4;
+    font-weight: 700;
+    padding: 5px 10px 0 10px;
+    font-size: 14px;
+}
+.multiple-options-suggested{
+    cursor: pointer;
+    background-color: #fff;
+    padding: 11px 10px;
+    height: 30px;
+    font-size: 16px !important;
+    margin-bottom: 5px;
+    color: #363636;
+}

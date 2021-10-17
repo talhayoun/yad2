@@ -51,3 +51,15 @@ export const verifyCookie = async (email, token) => {
         throw new Error(err.message);
     }
 }
+
+export const getUserProfile = async(email,token) => {
+    try{
+        const res = await Axios.post(`${process.env.REACT_APP_SERVER_API}/profile`, {email, token}, {headers: {token : token}});
+        if(res.data?.user){
+            return res.data;
+        }
+        throw new Error("Failed to get user")
+    }catch(err){
+        throw new Error(err)
+    }
+}

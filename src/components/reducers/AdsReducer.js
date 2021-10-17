@@ -9,6 +9,8 @@ const adsReducer = (data, action) => {
         case "FILTER_AD":
             console.log(action.ads)
             return { ads: action.ads }
+        case "FILTER_EMPTY":
+            return { ads: [] };
         default:
             return { ...data };
     }

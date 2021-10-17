@@ -45,6 +45,7 @@ const Dates = (props) => {
                 onFocusChange={({ focused }) => setFocused(focused)}
                 id="Date"
                 numberOfMonths={1}
+                readOnly={true}
             />
             {error && <p className="step-two-error-message">שדה חובה תאריך כניסה</p>}
         </div >

@@ -1,0 +1,32 @@
+@media only screen and (max-width:955px){
+    .header-liked-ads, .header-login{
+        display: none;
+    }
+    .header-container{
+        .header-upper-grid{
+            .header-upper-one{
+                width: 100%;
+            }
+            .header-upper-one-div{
+                grid-column-start: 2;
+                grid-row-start: 1;
+            }
+        }
+        .secondaryheader-div-two{
+            width: unset;
+        }
+    }
+
+    .body{
+        .body-container{
+            width: 95%;
+            .topad{
+                width: unset;
+                .topad-down-div{
+                    width: unset;
+                }
+            }
+        }
+        
+    }
+}

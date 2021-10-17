@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import LoginForm from './LoginForm';
 import LoginInfo from './LoginInfo';
 import { useHistory } from 'react-router-dom';
