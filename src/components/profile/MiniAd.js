@@ -8,7 +8,7 @@ const MiniAd = (props) => {
     const [street, setStreet] = useState("")
     useEffect(() => {
         getAdById(props.ad.ad).then(
-            (res => {
+            (res) => {
                 console.log(res)
                 if (res.ad) {
                     // if(res.ad.images.length > 0){
@@ -16,7 +16,10 @@ const MiniAd = (props) => {
                     setCity(res.ad.city);
                     setStreet(res.ad.street);
                 }
-            })
+            },
+            (err) => {
+                console.log(err)
+            }
         )
     }, [props])
     return (

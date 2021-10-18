@@ -8,14 +8,20 @@ const HouseNumber = ({setHouseNumberValue, houseNumberValue, streetValue, displa
         else setError(false);
     },[displayError])
     
+    const verifyField = (value, param) => {
+        if(!isNaN(value) && value.toString().length < 4) {
+            param(Math.abs(value));
+        }
+    }
+
     return(
         <div>
             <h6 className={streetValue === "" ? "steps-disabled-header" : ""}>מס' בית*</h6>
             <input className={streetValue === "" ? `steptwo-housenumber steps-disabled-input ${error ? "steps-error-input" : ""}` : `steptwo-housenumber ${error ? "steps-error-input" : ""}`}
                 disabled={streetValue === "" ? true : false}
                 value={houseNumberValue}
-                onChange={(e) => isNaN(e.target.value) ? "" : setHouseNumberValue(e.target.value)} 
-                onBlur={() => houseNumberValue.length > 0 ? setError(false) : setError(true)}
+                onChange={(e) => verifyField(e.target.value, setHouseNumberValue)} 
+                onBlur={() => houseNumberValue.toString().length > 0 ? setError(false) : setError(true)}
             />
             {error && <p className="step-two-error-message">שדה חובה מס' דירה</p>}
         </div>

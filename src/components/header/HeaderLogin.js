@@ -32,7 +32,7 @@ const HeaderLogin = ({ userData, dispatchUserData }) => {
             </div>
             <ul className="headerlogin-container">
                 {userData.firstName && <li>
-                    <div className="headerlogin-profile">
+                    <div className="headerlogin-profile" onClick={()=> history.push("/profile")}>
                         <div></div>
                         <p>איזור אישי</p>
                     </div>

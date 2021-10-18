@@ -28,9 +28,9 @@ const StepTwo = ({ setStepsFinished, publishData, dispatchPublishData }) => {
         let assetError = assetType === "דירה או אולי פנטהאוז" ? true : false;
         let cityError = cityValue.length > 0 ? false : true;
         let streetError = streetValue.length > 0 ? false : true;
-        let houseNumberError = houseNumberValue.length > 0 ? false : true;
-        let floorError = floorNumber.length > 0 ? false : true;
-        let totalFloorError = totalFloorNumbers.length > 0 ? false : true;
+        let houseNumberError = houseNumberValue.toString().length > 0 ? false : true;
+        let floorError = floorNumber.toString().length > 0 ? false : true;
+        let totalFloorError = totalFloorNumbers.toString().length > 0 ? false : true;
         console.log([assetError, cityError, streetError, houseNumberError, floorError, totalFloorError])
         setDisplayError([assetError, cityError, streetError, houseNumberError, floorError, totalFloorError]);
         if (!assetError && !cityError && !streetError && !houseNumberError && !floorError && !totalFloorError) {

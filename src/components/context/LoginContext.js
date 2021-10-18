@@ -1,4 +1,5 @@
 import React, { createContext, useEffect, useReducer } from 'react';
+import { useHistory } from 'react-router';
 import { deleteCookie, getCookie } from '../../server/Cookie';
 import { verifyCookie, verifyToken } from '../../server/UserRequests';
 import { LoginAction, LogoutAction } from '../actions/loginActions';
@@ -11,6 +12,8 @@ const LoginContextProvider = (props) => {
 
     const cookieData = getCookie();
 
+    const history = useHistory();
+
     useEffect(() => {
         verifyCookie(cookieData.email, cookieData.token).then(
             (res) => {
@@ -18,13 +21,17 @@ const LoginContextProvider = (props) => {
                 console.log(cookieData.email, cookieData.token, cookieData.lastName)
                 if (res.message === 'Verified')
                     dispatchUserData(LoginAction(cookieData.email, cookieData.token, cookieData.firstName, cookieData.lastName))
-                else
+                else{
+                    deleteCookie();
                     dispatchUserData(LogoutAction())
+                    history.push('/')
+                }
             },
             (err) => {
                 console.log(err)
                 deleteCookie();
                 dispatchUserData(LogoutAction())
+                history.push('/')
             }
         )
     }, [cookieData.token])

@@ -46,11 +46,11 @@ const StepFour = ({ setStepsFinished }) => {
             </div>
             <form onSubmit={onSubmitForm} className="stepfour-form">
                 <PaymentAmount paymentAmount={paymentAmount} setPaymentAmount={setPaymentAmount} displayError={displayError} />
-                <Input header={"ועד בית"} placeholder={"הכנסת סכום תשלום לועד בית"} must={false} func={setHouseCommitte} displayError={displayError} />
-                <Input header={"ארנונה לחודשיים"} placeholder={"סכום הארנונה לתשלום"} func={setPropertyTax} displayError={displayError} />
-                <Input header={'מ"ר בנוי'} placeholder={'כמה מ"ר בנוי יש בנכס'} must={false} func={setSize} displayError={displayError} />
-                <Input header={'גודל במ"ר סך הכל'} func={setTotalSize} must={true} displayError={displayError} />
-                <Input header={"מחיר"} placeholder={"סכום מינימלי 100"} must={false} func={setPrice} displayError={displayError} />
+                <Input header={"ועד בית"} placeholder={"הכנסת סכום תשלום לועד בית"} must={false} func={setHouseCommitte} displayError={displayError} value={houseCommitte} />
+                <Input header={"ארנונה לחודשיים"} placeholder={"סכום הארנונה לתשלום"} func={setPropertyTax} displayError={displayError} value={propertyTax} />
+                <Input header={'מ"ר בנוי'} placeholder={'כמה מ"ר בנוי יש בנכס'} must={false} func={setSize} displayError={displayError} value={size} />
+                <Input header={'גודל במ"ר סך הכל'} func={setTotalSize} must={true} displayError={displayError} value={totalSize} />
+                <Input header={"מחיר"} placeholder={"סכום מינימלי 100"} must={false} func={setPrice} displayError={displayError} value={price} />
                 <Dates setDate={setDate} displayError={displayError} />
                 <div className="stepfour-checkbox">
                     <input type="checkbox" />

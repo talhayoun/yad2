@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
+import { LoginContext } from '../context/LoginContext';
 
 
 const MobileHeaderDropDown = ({ setShowNav }) => {
 
     const history = useHistory();
+    const { userData } = useContext(LoginContext);
 
     const handlePublishClick = () => {
         // setShowNav(false);
@@ -21,7 +23,7 @@ const MobileHeaderDropDown = ({ setShowNav }) => {
                             <div></div>
                         </div>
                     </div>
-                    <p>התחברות</p>
+                    {userData.firstName ? <p>{userData.firstName} {userData.lastName}</p> : <p>התחברות</p>}
                     <button onClick={handlePublishClick}>פרסום מודעה</button>
                     <div className="mobile-dropdown-header-options">
                         <div className="mobile-dropdown-header-options-alert">

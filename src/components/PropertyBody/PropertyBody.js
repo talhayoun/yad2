@@ -2,18 +2,23 @@ import React, { useContext, useEffect, useState } from 'react';
 import { getAllAds } from '../../server/propertyRequests';
 import { addAd, adEmpty } from '../actions/adsActions';
 import { AdsContext } from '../context/AdsContext';
+import FilterBy from './FilterBy';
+import Options from './Options';
 import Property from './Property';
 
 const PropertyBody = () => {
 
     const [arrow, setArrow] = useState("arrow-down")
-    const [ads, setAds] = useState([]);
+    const [options, setOptions] = useState(false);
+    const [filterBy, setFilterBy] = useState(false);
 
     const changeArrowStyle = () => {
         setArrow(arrow === "arrow-down" ? "arrow-up" : "arrow-down");
+        setFilterBy(!filterBy)
     }
 
     const { adData, dispatchAdData } = useContext(AdsContext);
+
 
     useEffect(() => {
         dispatchAdData(adEmpty())
@@ -52,15 +57,17 @@ const PropertyBody = () => {
                         <p>לפי תאריך</p>
                         <div className={arrow}></div>
                     </div>
+                    {filterBy && <FilterBy />}
                 </div>
                 <div className="propertybody-filterby-container-two">
-                    <div className="propertybody-filterby-container-two-first">
+                    <div className="propertybody-filterby-container-two-first" onClick={() => setOptions(!options)}>
                         <div></div>
                         <p>סנן תוצאות</p>
                     </div>
+                    {options && <Options setOptions={setOptions} />}
                     <div className="propertybody-filterby-container-two-second">
                         <div></div>
-                        <p>סנן תוצאות</p>
+                        <p>תצוגת מפה</p>
                     </div>
                 </div>
             </div>

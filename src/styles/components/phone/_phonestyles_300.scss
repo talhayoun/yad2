@@ -615,4 +615,19 @@
     .stepseven-options-container{
         margin-right: 40px;
     }
+
+    .property-extra{
+        display: block;
+
+        .property-extra-ad{
+            display:none;
+        }
+    }
+    .property-one-second{
+        display: none;
+    }
+    .propertyextradata-properties-contianer{
+        grid-template-columns: 1fr 1fr 1fr !important;
+    }
+
 }
